@@ -1,5 +1,5 @@
 
-const defaultState = {currentUser: null}
+const defaultState = {currentUserId: null}
 
 const sessionReducer = (state = defaultState, action) => {
   Object.freeze(state);

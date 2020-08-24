@@ -218,8 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 You should be able to signup, login, and logout users from the browser console now. Try it out!
 
-
-
+Run the following lines individually and check your server to ensure that things are working properly.
+```javascript
+sessionAPI.signup({email: "test@test.com", password: "123456"});
+sessionAPI.logout();
+sessionAPI.login({email: "test@test.com", password: "123456"});
+sessionAPI.logout();
+```
 
 
 
@@ -250,20 +255,46 @@ Create a current user partial at `app/views/api/users/_current_user.json.jbuilde
 json.extract! userm :id, :email
 ```
 
-Test to see if everything is working by loggin in a user, refreshing the page, and checking what `window.currentUser` is.
+Test to see if everything is working by logging in a user, refreshing the page, and checking what `window.currentUser` is.
+
+Make `usersReducer`
+Make `entitiesReducer`
+Hook them up to the `rootReducer`
+
+
+Now that we have the currentUser bootstrapped to the window we want to get this user into our store using preloadedState!
+
+Extract currentUser info from the window in your entry file. It should look like the following:
+```javascript
+  let preloadedState;
+  if (window.currentUser === undefined) {
+    preloadedState = {};
+  } else {
+    preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser}
+      },
+      session: { currentUserId: window.currentUser.id }
+    };
+    window.currentUser = null; // remove the currentUser info from the window
+  }
+  
+  const store = configureStore(preloadedState);
+```
+
+Check to see that your bootstrapped current user is showing up in your redux store. Note how we only store the currentUserId in our session slice of state to maintain a normalized state shape. Our users slice of state in entities should be responsible for containing all user data.
+
+It's time to build our session actions so that we can prepare to control auth from our react components instead of just firing off $.ajax calls in the console. Make sure to connect these actions to `usersReducer.js` and `sessionReducer.js`
 
 
 
 
 
 
-Now that we have the currentUser bootstrapped tot he window we want to get this user into our store using preloadedState!
 
 
 
-
-
-### Let's add Redux into the mix!
+### Let's build out the rest of our auth functionality!
 
 
 /actions

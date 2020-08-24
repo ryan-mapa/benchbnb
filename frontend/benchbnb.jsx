@@ -8,12 +8,27 @@ import * as SessionApitUtil from './util/sessionApiUtil';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  const store = configureStore();
   
+  let preloadedState;
+  if (window.currentUser === undefined) {
+    preloadedState = {};
+  } else {
+    preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser}
+      },
+      session: { currentUserId: window.currentUser.id }
+    };
+    window.currentUser = null; // remove the currentUser info from the window
+  }
+  
+  const store = configureStore(preloadedState);
+
   // for development only
   window.store = store;
   window.sessionAPI = SessionApitUtil;
-  console.log("currentUser: ", window.currentUser);
+  // console.log("currentUser: ", window.currentUser);
+  console.log("state: ", store.getState());
 
   ReactDOM.render(<Root store={store} />, root);
 })
