@@ -4,7 +4,6 @@ import HeaderContainer from './headerContainer';
 const App = (props) => (
   <>
     <HeaderContainer />
-    <h2>I am the App component!</h2>
   </>
 )
 

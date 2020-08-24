@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Greeting from './session/greeting';
+import { logout } from '../actions/sessionActions';
 
 class Header extends React.Component {
   constructor(props) {
@@ -8,11 +9,11 @@ class Header extends React.Component {
   }
 
   render() {
-    const currentUser = this.props.currentUser;
+    const { currentUser, logout } = this.props;
     return (
       <div className="header-container">
         <h1>BenchBnB</h1>
-        <Greeting currentuser={currentUser} />
+        <Greeting currentuser={currentUser} logout={logout} />
       </div>
     )
   }
@@ -20,11 +21,11 @@ class Header extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser
+  currentUser: state.entities.users[state.session.currentUserId]
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  logout: () => dispatch(logout())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

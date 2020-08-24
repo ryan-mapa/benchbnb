@@ -286,6 +286,21 @@ Check to see that your bootstrapped current user is showing up in your redux sto
 
 It's time to build our session actions so that we can prepare to control auth from our react components instead of just firing off $.ajax calls in the console. Make sure to connect these actions to `usersReducer.js` and `sessionReducer.js`
 
+Once again, test in console. Don't forget to dispatch the actions!
+Example:
+```javascript
+store.dispatch(sessionActions.login({email: "test@test.com", password: "123456"}))
+```
+
+
+
+We're just about ready to start building out our components!
+
+Before we begin we're going to need to set up `react-router` so that we can simulate navigation in our single-page web app (SWA) and control what components render based on the browser url.
+
+`npm install react-router-dom`
+
+Wrap the App in HashRouter in `root.jsx`
 
 
 
