@@ -5,6 +5,7 @@ import configureStore from './store/store'
 
 //for development only
 import * as SessionApitUtil from './util/sessionApiUtil';
+import * as sessionActions from './actions/sessionActions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // for development only
   window.store = store;
   window.sessionAPI = SessionApitUtil;
+  window.sessionActions = sessionActions;
   // console.log("currentUser: ", window.currentUser);
   console.log("state: ", store.getState());
 
