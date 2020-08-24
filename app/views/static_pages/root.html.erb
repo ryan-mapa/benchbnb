@@ -1,1 +1,6 @@
+<script>
+  <% if current_user %>
+    window.currentUser = <%= (render "/api/users/current_user.json.jbuilder", user: current_user).html_safe %>
+  <% end  %>
+</script>
 <div id="root">If you see this, then React must be broken!</div>
