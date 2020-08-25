@@ -350,3 +350,18 @@ header component
  + GreetingContainer
   + Greeting
   + login/signup or logout buttons
+
+
+
+
+
+
+
+  ### Errors
+
+  Now that our auth functionality is working, let's focus on getting errors to render properly.
+
+  errorsReducer
+  sessionErrorsReducer: stores an errors pojo
+  sessionActions: receiveSessionErrors, clearSessionErrors and use `.responseJSON`
+  `users_controller.rb` user @user.errors.messages instead of .full_messages

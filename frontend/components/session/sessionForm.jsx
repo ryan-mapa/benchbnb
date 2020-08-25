@@ -1,4 +1,5 @@
 import React from 'react';
+import { logout } from '../../util/sessionApiUtil';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class SessionForm extends React.Component {
           <label>Email:
             <input type="email" onChange={this.handleUpdate("email")} value={this.state.email}/>
           </label>
+          <br/>
           <label>Password:
             <input type="password" onChange={this.handleUpdate("password")} value={this.state.password}/>
           </label>
