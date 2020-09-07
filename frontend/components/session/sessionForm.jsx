@@ -1,5 +1,5 @@
 import React from 'react';
-import { logout } from '../../util/sessionApiUtil';
+import ErrorMessage from '../errors/errorMessage';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const errors = this.props.errors;
     return (
       <div className="session-form-container">
         <h1>{this.props.formType === "login" ? "Log In" : "Sign Up"} Form</h1>
@@ -28,11 +29,13 @@ class SessionForm extends React.Component {
           <label>Email:
             <input type="email" onChange={this.handleUpdate("email")} value={this.state.email}/>
           </label>
-          <br/>
+          <ErrorMessage errors={errors} type="email" />
           <label>Password:
             <input type="password" onChange={this.handleUpdate("password")} value={this.state.password}/>
           </label>
+          <ErrorMessage errors={errors} type="password"/>
           <input type="submit" value={this.props.formType === "login" ? "Log In" : "Sign Up"}/>
+          <ErrorMessage errors={errors} type="general" />
         </form>
       </div>
     )

@@ -6,8 +6,9 @@ const sessionErrorsReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS:
-      const err = action.errors
-      return Array.isArray(err) ? { generalErrors: err } : err;
+      // const err = action.errors
+      // return Array.isArray(err) ? { generalErrors: err } : err;
+      return action.errors
     case CLEAR_SESSION_ERRORS:
       return {};
     default:

@@ -365,3 +365,5 @@ header component
   sessionErrorsReducer: stores an errors pojo
   sessionActions: receiveSessionErrors, clearSessionErrors and use `.responseJSON`
   `users_controller.rb` user @user.errors.messages instead of .full_messages
+
+  Let's make an error component `errorMessage` it will take in `errors` and `type` props.
