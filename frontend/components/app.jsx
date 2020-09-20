@@ -9,7 +9,8 @@ const App = (props) => (
     <HeaderContainer />
     <Route path="/login" component={LoginFormContainer}/>
     <Route path="/signup" component={SignupFormContainer}/>
-    <img className="background" src="/assets/pier_bench.jpg" alt="bench-background"/>
+    <div className="background-shading"></div>
+    <img className="background-img" src="/assets/pier_bench.jpg" alt="bench-background"/>
   </>
 )
 
