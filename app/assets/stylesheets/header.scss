@@ -1,0 +1,57 @@
+.header-container {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(150, 150, 150, 0.2), 
+              0 6px 20px 0 rgba(150, 150, 150, 0.1);
+  margin-bottom: 50px;
+}
+
+.logo {
+  margin-left: 20px;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.greeting-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.greeting-container h2 {
+  margin-right: 10px;
+  color: darkslategray;
+}
+
+.greeting-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.session-button {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  width: 75px;
+  color: white;
+}
+
+.session-button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}

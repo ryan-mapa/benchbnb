@@ -366,4 +366,10 @@ header component
   sessionActions: receiveSessionErrors, clearSessionErrors and use `.responseJSON`
   `users_controller.rb` user @user.errors.messages instead of .full_messages
 
-  Let's make an error component `errorMessage` it will take in `errors` and `type` props.
+  Let's make an error component `errorMessage` it will take in `errors` and `type` props. It's role is just to return a div containing a formatted error message or return null if there is no error of the type in the error prop. Allow it to handle general type errors and specific field errors like `password` and `email` errors.
+
+  Add this `ErrorMessage` component to your session form below each input type and also once more at the bottom of the form for `general` type errors.
+
+  ### Time to style!
+
+  

@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+// remove default link styling
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}

@@ -6,14 +6,14 @@ const Greeting = ({currentuser, logout}) => {
   if (currentuser) {
     buttons = (<div><div className="session-button" onClick={logout}>Log Out</div></div>)
   } else {
-    buttons = (<div>  
+    buttons = (<div className="greeting-buttons">  
                 <div className="session-button"><Link to="/login">Log In</Link></div>
                 <div className="session-button"><Link to="/signup">Sign up</Link></div>
               </div>)
   }
   
-  return (<div>
-    <h2>{currentuser ? `Hello again, ${currentuser.email}` : "Nobody logged in"}</h2>
+  return (<div className="greeting-container">
+    <h2>{currentuser ? `Hello again, ${currentuser.email}` : ""}</h2>
     {buttons}
   </div>)
 };

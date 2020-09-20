@@ -20,21 +20,38 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state).then(() => this.props.history.push('/'));
   }
 
+  // componentDidUpdate(prevProps){
+  //   if (this.props.formType !== prevProps.formType) {
+  //     debugger
+  //     this.props.clearErrors();
+  //   }
+  // }
+
+  componentDidMount(){
+    this.props.clearErrors();
+  }
+
   render() {
     const errors = this.props.errors;
     return (
       <div className="session-form-container">
-        <h1>{this.props.formType === "login" ? "Log In" : "Sign Up"} Form</h1>
+        <h2>{this.props.formType === "login" ? "Log In" : "Sign Up"}</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>Email:
-            <input type="email" onChange={this.handleUpdate("email")} value={this.state.email}/>
-          </label>
+          <input className="session-input" 
+              type="email" 
+              onChange={this.handleUpdate("email")} 
+              value={this.state.email}
+              placeholder="Email"
+          />
           <ErrorMessage errors={errors} type="email" />
-          <label>Password:
-            <input type="password" onChange={this.handleUpdate("password")} value={this.state.password}/>
-          </label>
+          <input className="session-input" 
+              type="password" 
+              onChange={this.handleUpdate("password")} 
+              value={this.state.password}
+              placeholder="Password"
+          />
           <ErrorMessage errors={errors} type="password"/>
-          <input type="submit" value={this.props.formType === "login" ? "Log In" : "Sign Up"}/>
+          <input className="session-submit" type="submit" value={this.props.formType === "login" ? "Log In" : "Sign Up"}/>
           <ErrorMessage errors={errors} type="general" />
         </form>
       </div>

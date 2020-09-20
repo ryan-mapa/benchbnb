@@ -12,7 +12,10 @@ class Header extends React.Component {
     const { currentUser, logout } = this.props;
     return (
       <div className="header-container">
-        <h1>BenchBnB</h1>
+        <div className="logo">
+          <img className="logo-img" src="/assets/app_academy_logo.png" alt="aalogo"/>
+          <h1>BenchBnB</h1>
+        </div>
         <Greeting currentuser={currentUser} logout={logout} />
       </div>
     )
