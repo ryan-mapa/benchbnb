@@ -7,3 +7,10 @@ a, a:visited, a:hover, a:active {
     text-decoration: none;
     color: inherit;
 }
+
+.background {
+  width: 100%;
+  position: fixed;
+  top: -400px;
+  z-index: -1;
+}
