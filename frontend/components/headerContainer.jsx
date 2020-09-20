@@ -16,7 +16,7 @@ class Header extends React.Component {
           <img className="logo-img" src="/assets/app_academy_logo.png" alt="aalogo"/>
           <h1>BenchBnB</h1>
         </div>
-        <Greeting currentuser={currentUser} logout={logout} />
+        <Greeting currentUser={currentUser} logout={logout} />
       </div>
     )
   }

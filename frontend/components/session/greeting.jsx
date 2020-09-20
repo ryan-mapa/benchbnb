@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({currentuser, logout}) => {
+const Greeting = ({currentUser, logout}) => {
   let buttons;
-  if (currentuser) {
+  let username;
+  if (currentUser) {
     buttons = (<div><div className="session-button" onClick={logout}>Log Out</div></div>)
+    username = currentUser.email[0].toUpperCase() + currentUser.email.slice(1, currentUser.email.indexOf("@"));
   } else {
     buttons = (<div className="greeting-buttons">  
                 <div className="session-button"><Link to="/login">Log In</Link></div>
                 <div className="session-button"><Link to="/signup">Sign up</Link></div>
               </div>)
   }
-  
   return (<div className="greeting-container">
-    <h2>{currentuser ? `Hello again, ${currentuser.email}` : ""}</h2>
+    <h2>{currentUser ? `Hello again, ${username}!` : ""}</h2>
     {buttons}
   </div>)
 };
