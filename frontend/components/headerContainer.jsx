@@ -7,18 +7,13 @@ import { withRouter } from 'react-router-dom';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.handleLogoClick = this.handleLogoClick.bind(this);
   }
 
-  handleLogoClick() {
-    this.props.history.push('/');
-  }
-
-  render() {
+  render() {  
     const { currentUser, logout } = this.props;
     return (
       <div className="header-container">
-        <div className="logo" onClick={this.handleLogoClick}>
+        <div className="logo" onClick={() => this.props.history.push('/')}>
           <img className="logo-img" src="/assets/app_academy_logo.png" alt="aalogo"/>
           <h1>BenchBnB</h1>
         </div>

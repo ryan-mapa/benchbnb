@@ -8,19 +8,19 @@ a, a:visited, a:hover, a:active {
     color: inherit;
 }
 
-.background-shading {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: -1;
-  height: 1000px;
-  background: linear-gradient(
-    to bottom, rgba(0,0,0, 0), rgba(0,0,0,0.5));
-}
+// .background-shading {
+//   position: absolute;
+//   top: 0px;
+//   width: 100%;
+//   z-index: -1;
+//   height: 1500px;
+//   background: linear-gradient(
+//     to bottom, rgba(0,0,0, 0), rgba(0,0,0,0.5));
+// }
 
 .background-img {
   width: 100%;
   position: fixed;
-  top: -350px;
+  top: -400px;
   z-index: -2;
 }

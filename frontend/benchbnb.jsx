@@ -29,8 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store = store;
   window.sessionAPI = SessionApitUtil;
   window.sessionActions = sessionActions;
-  // console.log("currentUser: ", window.currentUser);
-  console.log("state: ", store.getState());
+
 
   ReactDOM.render(<Root store={store} />, root);
 })

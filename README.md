@@ -413,3 +413,12 @@ Let's consider what columns we need to need for our benches!
 
 # Phase 4: Reviews
 We review them!
+
+
+
+
+logo redirect to /
+clearing errors after login
+  - receive current user in session errors and clear!
+protected routes for session form
+
