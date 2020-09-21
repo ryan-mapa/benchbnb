@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     this.state = {email: "", password: ""};
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleUpdate(type) {
@@ -20,12 +21,13 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state).then(() => this.props.history.push('/'));
   }
 
-  // componentDidUpdate(prevProps){
-  //   if (this.props.formType !== prevProps.formType) {
-  //     debugger
-  //     this.props.clearErrors();
-  //   }
-  // }
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.processForm({
+      email: "guest@aa.io",
+      password: "go_bench_go"
+    }).then(() => this.props.history.push('/'));
+  }
 
   componentDidMount(){
     this.props.clearErrors();
@@ -33,6 +35,10 @@ class SessionForm extends React.Component {
 
   render() {
     const errors = this.props.errors;
+    
+    const demoButton = <input className="session-submit" type="button" onClick={this.handleDemo} value="Demo" />;
+    const demoButtonPlace = this.props.formType === "login" ? demoButton : null;
+
     return (
       <div className="session-form-container">
         <h2>{this.props.formType === "login" ? "Log In" : "Sign Up"}</h2>
@@ -52,6 +58,7 @@ class SessionForm extends React.Component {
           />
           <ErrorMessage errors={errors} type="password"/>
           <input className="session-submit" type="submit" value={this.props.formType === "login" ? "Log In" : "Sign Up"}/>
+          {demoButtonPlace}
           <ErrorMessage errors={errors} type="general" />
         </form>
       </div>
