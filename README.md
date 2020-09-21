@@ -353,7 +353,9 @@ header component
 
 
 
-
+### DEMO USER
+- Seeding
+- Conditional rendering of demo button
 
 
 
@@ -372,4 +374,42 @@ header component
 
   ### Time to style!
 
-  
+
+- copying some neat styles out there! 
+  - buttons
+  - header bottom
+
+- Asset pipeline
+
+- Background! 
+  - Unsplash images
+  - background-shading
+
+- Favicon
+
+
+# Phase 2: Bench Show
+
+Let's begin making benches
+
+We should start from the backend!
+Start with making a `benches` table and `Bench` model
+
+Let's consider what columns we need to need for our benches!
+
+`name`:string - Name for this bench
+`description`:text - Description of the bench
+`lat`:float - Latitude
+`lng`:float - Longitude
+`material`:string - What is the bench made of?
+`public`:boolean - Publicly accessible?
+`wifi`:boolean - Is there wifi available?
+`scenicView`:boolean - Does it have a particularly scenic view?
+`seats`:integer - How many people can it seat at a time?
+`layable`:boolean - Can you lay down on it?
+`shaded`:boolean - Does it have shade?
+`approach`:integer - Difficulty to reach bench 
+
+
+# Phase 4: Reviews
+We review them!
