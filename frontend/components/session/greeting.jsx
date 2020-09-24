@@ -9,8 +9,8 @@ const Greeting = ({currentUser, logout}) => {
     username = currentUser.email[0].toUpperCase() + currentUser.email.slice(1, currentUser.email.indexOf("@"));
   } else {
     buttons = (<div className="greeting-buttons">  
-                <div className="session-button"><Link to="/login">Log In</Link></div>
-                <div className="session-button"><Link to="/signup">Sign up</Link></div>
+                  <Link className="session-button" to="/login">Log In</Link>
+                  <Link className="session-button" to="/signup">Sign up</Link>
               </div>)
   }
   return (<div className="greeting-container">

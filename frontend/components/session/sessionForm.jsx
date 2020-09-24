@@ -1,5 +1,6 @@
 import React from 'react';
 import ErrorMessage from '../errors/errorMessage';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -37,13 +38,18 @@ class SessionForm extends React.Component {
 
   render() {
     const errors = this.props.errors;
-    
+    const type = this.props.formType;
+
     const demoButton = <input className="session-submit" type="button" onClick={this.handleDemo} value="Demo" />;
-    const demoButtonPlace = this.props.formType === "login" ? demoButton : null;
+    const demoButtonPlace = type === "login" ? demoButton : null;
+    const sessionSwitch = (<h3>
+      {type === "login" ? "Don't have an account? " : "Already have an account? "}
+      {type === "login" ? <Link to="/signup">Sign up!</Link> : <Link to="/login">Log In!</Link>}
+    </h3>);
 
     return (
       <div className="session-form-container">
-        <h2>{this.props.formType === "login" ? "Log In" : "Sign Up"}</h2>
+        <h2>{type === "login" ? "Log In" : "Sign Up"}</h2>
         <form onSubmit={this.handleSubmit}>
           <input className="session-input" 
               type="email" 
@@ -59,9 +65,10 @@ class SessionForm extends React.Component {
               placeholder="Password"
           />
           <ErrorMessage errors={errors} type="password"/>
-          <input className="session-submit" type="submit" value={this.props.formType === "login" ? "Log In" : "Sign Up"}/>
+          <input className="session-submit" type="submit" value={type === "login" ? "Log In" : "Sign Up"}/>
           {demoButtonPlace}
           <ErrorMessage errors={errors} type="general" />
+          {sessionSwitch}
         </form>
       </div>
     )
