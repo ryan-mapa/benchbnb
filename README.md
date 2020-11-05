@@ -411,6 +411,24 @@ Let's consider what columns we need to need for our benches!
 `approach`:integer - Difficulty to reach bench 
 
 
+Create a new table and model for benches
+`rails g model Bench name description:text lat:float lng:float material wifi:boolean scenic:boolean seats:integer layable:boolean shaded:boolean approach:integer`
+
+In the migration file that was generated you can add null restictions and default values.
+
+Add model level validations. You might want to add a method to ensure some default values for your bench attributes.
+
+Make a single seed in your seed file to play around with.
+
+Time to make the controller!
+`rails g controller Api::Benches`
+
+
+
+*** Don't worry about images for now! ***
+(https://open.appacademy.io/learn/swe-in-person/react/active-storage-and-aws-s3-hosting-demo)
+
+
 # Phase 4: Reviews
 We review them!
 

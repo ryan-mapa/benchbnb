@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  lat: 1.5
+  lng: 1.5
+  material: MyString
+  wifi: false
+  scenic: false
+  seats: 1
+  layable: false
+  shaded: false
+  approach: 1
+
+two:
+  name: MyString
+  description: MyText
+  lat: 1.5
+  lng: 1.5
+  material: MyString
+  wifi: false
+  scenic: false
+  seats: 1
+  layable: false
+  shaded: false
+  approach: 1
