@@ -1,0 +1,139 @@
+.bench-show-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: 100px;
+}
+
+.bench-show-left {
+  height: fit-content;
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bench-pic {
+  width: 600px;
+  height: 400px;
+  background-color: darkgray;
+  margin-bottom: 10px;
+}
+
+.bench-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+
+.bench-detail {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.material-container {
+  font-weight: bold;
+  margin: 10px;
+  text-transform: capitalize;
+}
+
+.seat-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: fit-content;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.seat-icon-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 150px;
+  margin-left: 5px;
+}
+
+.seat-icon-container img {
+  margin-right: -10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.hover-icon-container {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  flex-wrap: wrap;
+}
+
+.unavailable {
+  padding: 5px;
+  background-color: #dedede;
+  margin: 10px;
+  border-radius: 5px;
+  width: fit-content;
+  border: 3px solid lightgray;
+}
+
+.unavailable img {
+  opacity: 0.1;
+}
+        
+.detail-icon {
+  padding: 5px;
+  background-color: lightgray;
+  margin: 10px;
+  border-radius: 5px;
+  width: fit-content;
+  border: 3px solid green;
+}
+
+.credits {
+  margin-top: 20px;
+}
+
+// How to make a tooltip from https://www.w3schools.com/css/css_tooltip.asp
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  margin-left: 7px;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 5;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+.tooltip .tooltip-text::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
